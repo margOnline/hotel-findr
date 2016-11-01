@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/margOnline/hotel-findr#readme",
   "dependencies": {
+    "ejs": "^2.5.2",
     "express": "^4.14.0",
     "reload": "^1.0.2"
   }
