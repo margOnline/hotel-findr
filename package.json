@@ -1,0 +1,26 @@
+{
+  "name": "hotel-findr",
+  "version": "1.0.0",
+  "description": "node version of top-destinations",
+  "main": "app/app.js",
+  "scripts": {
+    "start": "nodemon -e css,ejs,js,json --watch app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/margOnline/hotel-findr.git"
+  },
+  "keywords": [
+    "hotel"
+  ],
+  "author": "margOnline",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/margOnline/hotel-findr/issues"
+  },
+  "homepage": "https://github.com/margOnline/hotel-findr#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "reload": "^1.0.2"
+  }
+}
