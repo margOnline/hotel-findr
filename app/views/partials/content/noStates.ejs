@@ -1,0 +1,8 @@
+<% for (var city in countries[country]["city"]) { %>
+  <% for (var hotelName in countries[country]["city"][city]) { %>
+    <% var hotel = countries[country]["city"][city][hotelName] %>
+    <% include hotelDetails.ejs %>
+  <% } %>
+<% } %>
+<a href="#">See all 898 hotels in London</a>
+<span class="icon-arrow-right"></span>

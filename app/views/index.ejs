@@ -9,21 +9,40 @@
       </p>
       <div class="strapline">Top Destinations</div>
         <% for (var country in countries) { %>
-          <% for (var city in countries[country]) { %>
-            <div class="panel">
-              <div class="panel-head closed">
-                <h4>
-                  <span class="icon-arrow"></span>
-                  <span><%= city%>, <%= country %></span>
-                </h4>                
-                <p> Over 1889 hotels</p>
-              </div>
-              <div class="panel-content">
-                <% include partials/content/hotels.ejs %>
-              </div>
-            </div> <!-- panel -->
+          <div class="panel">
+            <% if (countries[country]["state"]) { %>       
+              <% for (var stateName in countries[country]["state"]) { %>
+                <% for (var state in countries[country]["state"][stateName]) { %>
+                  <% for (var cityName in countries[country]["state"][stateName][state]) { %>
+                    <div class="panel-head closed">
+                      <h4>
+                        <span class="icon-arrow"></span>
+                        <span><%= cityName %>, <%= stateName %>, <%= country %></span>
+                      </h4>                
+                      <p> Over 1889 hotels</p>
+                    </div>                            
+                    <div class="panel-content">
+                      <% include partials/content/states.ejs %>
+                    </div>
+                  <% } %>
+                <% } %>
+              <% } %>
+            <% } else { %>
+              <% for (var city in countries[country]["city"]) { %>           
+                <div class="panel-head closed">
+                  <h4>
+                    <span class="icon-arrow"></span>
+                    <span><%= city%>, <%= country %></span>
+                  </h4>                
+                  <p> Over 1889 hotels</p>
+                </div>
+                <div class="panel-content">
+                  <% include partials/content/noStates.ejs %>
+                </div>             
+              <% } %>
           <% } %>
-        <% } %>
+        </div> <!-- panel -->
+      <% } %>
       <div class="offer-text">
         <a href="#">See all of our destination offers</a>
         <span class="icon-arrow-right"></span>
