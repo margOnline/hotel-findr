@@ -19,22 +19,8 @@
                 <p> Over 1889 hotels</p>
               </div>
               <div class="panel-content">
-                <% for (var hotel in countries[country][city]) { %>
-                  <div class="details">
-                    <a href="<%= countries[country][city][hotel]["url"] %>"><%= hotel %></a>
-                    <div class="meta">
-                      <span class="rating"><%= countries[country][city][hotel]["star_rating"] %></span>
-                      <span class ="star"></span>
-                      <span class="text">From
-                        <span class="prev-price"><%= countries[country][city][hotel]["former_price"] %></span>
-                        <span class="current-price"><%= countries[country][city][hotel]["current_price"] %></span>
-                      </span>
-                    </div>
-                  </div>
-                <% } %>
-                <a href="#">See all 898 hotels in London</a>
-                <span class="icon-arrow-right"></span>
-              </div> <!-- panel-content -->
+                <% include partials/content/hotels.ejs %>
+              </div>
             </div> <!-- panel -->
           <% } %>
         <% } %>
@@ -44,6 +30,6 @@
       </div>
     </div> <!-- container -->
     <script src="/reload/reload.js"></script>
-    <script src="/js/behaviour.js"></script>
+    <script src="/js/hotels.js"></script>
   </body>
 </html>
